@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  createNavigationContainerRef,
+  NavigationContainer,
+} from '@react-navigation/native';
+import {persistor, store} from '@store';
+import React from 'react';
+import {Provider} from 'react-redux';
+import RootNavigation from '@navigation/RootNavigation';
+import {RootStackParamList} from './src/types/navigation';
+import {PersistGate} from 'redux-persist/integration/react';
+import {ThemeProvider} from 'styled-components/native';
+import projectNameTheme from '@ui/theme';
+import {QueryClientProvider} from '@tanstack/react-query';
+import {queryClient} from '@lib/react-query';
+import '@translation/language-detector';
 
-export default function App() {
+export const navigationRef = createNavigationContainerRef<RootStackParamList>();
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={projectNameTheme}>
+            <NavigationContainer>
+              <RootNavigation />
+            </NavigationContainer>
+          </ThemeProvider>
+        </PersistGate>
+      </QueryClientProvider>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

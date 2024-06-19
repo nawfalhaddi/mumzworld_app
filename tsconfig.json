@@ -1,6 +1,27 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "strict": true
+    "baseUrl": "./",
+    "paths": {
+      "@config/*": ["./src/config/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@navigation/*": ["./src/navigation/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@store": ["./src/store/index"],
+      "@store/*": ["./src/store/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@translation/*": ["./src/translation/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@root/*": ["./*"]
+    }
+  },
+  "ts-node": {
+    // ts-node automated configuration using commonjs
+    "compilerOptions": {
+      "module": "CommonJS",
+      "types": ["node"]
+    }
   }
 }
