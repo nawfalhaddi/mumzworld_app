@@ -7,7 +7,7 @@ import {useGetPosts} from '@screens/Home/hooks/useGetPosts';
 import {useDispatch, useSelector} from '@store';
 import {incrementByAmount} from '@store/counterSlice';
 import {horizontalScale, verticalScale} from '@ui/theme/scaling';
-import {styled} from 'styled-components/native';
+import * as Updates from 'expo-updates';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {
@@ -19,7 +19,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import * as Updates from 'expo-updates';
+import {styled} from 'styled-components/native';
 
 export interface HomeViewProps
   extends NativeStackScreenProps<RootStackParamList, RouteNames.HomeScreen> {}
@@ -132,13 +132,13 @@ export default function HomeView({navigation}: HomeViewProps) {
           i18n
             .changeLanguage(i18n.language === 'ar' ? 'en' : 'ar')
             .then(async () => {
-              await I18nManager.forceRTL(false);
+              let shouldBeRTL = i18n.dir() === 'rtl';
 
-              // await I18nManager.allowRTL(i18n.dir() === 'rtl');
-              // await I18nManager.forceRTL(i18n.dir() === 'rtl');
-            })
-            .then(async () => {
-              await Updates.reloadAsync();
+              if (shouldBeRTL !== I18nManager.isRTL) {
+                await I18nManager.allowRTL(shouldBeRTL);
+                await I18nManager.forceRTL(shouldBeRTL);
+                Updates.reloadAsync();
+              }
             });
         }}
       />

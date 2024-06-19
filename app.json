@@ -23,10 +23,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "supportsRTL": true,
-      "forcesRTL": false
-    },
+    "extra": {},
     "plugins": ["expo-localization"]
   }
 }
