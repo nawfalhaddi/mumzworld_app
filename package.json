@@ -7,7 +7,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest",
+    "gen-screen": "npx ts-node ./src/scripts/gen-screen.ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
@@ -54,7 +57,7 @@
     "eslint": "^8.19.0",
     "eslint-plugin-testing-library": "^6.2.2",
     "husky": "^8.0.1",
-    "jest": "^29.6.3",
+    "jest": "^29.7.0",
     "mustache": "^4.2.0",
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
