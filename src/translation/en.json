@@ -1,13 +1,11 @@
 {
-  "txt_welcome_to_rn_by_nh": "Welcome to our template",
-  "txt_change_language": "Change language",
   "txt_welcome": "Welcome",
   "txt_products": "Products",
   "txt_settings": "Settings",
   "txt_product_details": "Product details",
   "txt_features": "Features",
   "txt_description": "Description",
-  "txt_switch_language_to": "Switch language to",
+  "txt_switch_language_to": "Press the text to switch language to",
   "txt_pay": "Pay",
   "txt_add_to_cart": "Add to cart",
   "txt_reviews": "Reviews",
@@ -17,5 +15,7 @@
   "txt_dubai": "Dubai",
   "txt_emi_option_available": "EMI option available",
   "txt_pay_in_4_installments": "Pay in 4 interest-free payments of AED 374.75.",
-  "txt_learn_more": "Learn more"
+  "txt_learn_more": "Learn more",
+  "txt_english": "English",
+  "txt_arabic": "Arabic"
 }

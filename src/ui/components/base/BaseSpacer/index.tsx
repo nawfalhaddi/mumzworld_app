@@ -1,13 +1,13 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, ViewProps} from 'react-native';
 import styled from 'styled-components/native';
 
-interface IBaseSpacerProps {
-  height: number;
+interface IBaseSpacerProps extends ViewProps {
+  height?: number;
 }
 
-const BaseSpacer = (props: IBaseSpacerProps) => {
-  return <Root height={props?.height} />;
+const BaseSpacer = ({height, ...rest}: IBaseSpacerProps) => {
+  return <Root height={height ?? 0} {...rest} />;
 };
 
 export default BaseSpacer;

@@ -60,7 +60,7 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator
       id="bottomTab"
-      initialRouteName={RouteNames.ProductsStack}
+      initialRouteName={RouteNames.WelcomeStack}
       screenOptions={{
         tabBarActiveTintColor: theme?.colors?.semanticBgSecondary,
         tabBarInactiveTintColor: theme.colors.semanticFgTextDisabled,

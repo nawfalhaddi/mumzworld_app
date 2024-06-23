@@ -2,7 +2,6 @@ import {RouteNames} from '@navigation/routesNames';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@root/src/customTypes/navigation';
 import {BaseText} from '@ui/components/base/BaseText';
-import {getLocales} from 'expo-localization';
 import * as Updates from 'expo-updates';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
@@ -17,13 +16,11 @@ export interface SettingsViewProps
 
 export default function SettingsView({}: SettingsViewProps) {
   const {t, i18n} = useTranslation();
-  const {languageCode} = getLocales()[0];
   return (
     <MainContainer>
       <RowContainer>
-        <BaseText
+        <CenteredText
           onPress={() => {
-            console.log('clicked');
             i18n
               .changeLanguage(i18n.language === 'ar' ? 'en' : 'ar')
               .then(async () => {
@@ -37,8 +34,8 @@ export default function SettingsView({}: SettingsViewProps) {
               });
           }}>
           {t('txt_switch_language_to')}{' '}
-          {languageCode === 'en' ? 'Arabic' : 'English'}
-        </BaseText>
+          {i18n.language === 'en' ? t('txt_arabic') : t('txt_english')}
+        </CenteredText>
       </RowContainer>
     </MainContainer>
   );
@@ -53,5 +50,10 @@ const MainContainer = styled(View)(({theme: {spacingValues}}) => ({
 const RowContainer = styled(View)(({}) => ({
   flexDirection: 'row',
   alignItems: 'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
+  width: '100%',
+}));
+const CenteredText = styled(BaseText)(({}) => ({
+  textAlign: 'center',
+  textDecoration: 'underline',
 }));

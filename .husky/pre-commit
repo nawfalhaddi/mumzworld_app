@@ -3,5 +3,5 @@
 
 #enable scripts that you want to run or add other ones
 
-# yarn lint
-# yarn test
+yarn lint
+yarn test

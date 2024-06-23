@@ -108,7 +108,6 @@ const MiddleContainer = styled(View)(({theme: {}}) => ({
 }));
 
 const RightContainer = styled(View)(({theme: {spacingValues}}) => ({
-  //   borderWidth: 1,
   flex: 1,
   height: scale(50),
   paddingRight: spacingValues.hSm,
