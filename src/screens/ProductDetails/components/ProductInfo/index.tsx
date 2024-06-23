@@ -4,12 +4,13 @@ import {BaseText} from '@ui/components/base/BaseText';
 import StarIcon from '@ui/components/icons/StarIcon';
 import TamaraIcon from '@ui/components/icons/Tamara';
 import {scale} from '@ui/theme/scaling';
-import i18next from 'i18next';
+import i18next, {t} from 'i18next';
 import React, {useMemo} from 'react';
 import {View} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 import DeliveryEstimate from './components/DeliveryEstimate';
-import ReviewsSection from './components/ReviewsSection';
+import ProductDescription from './components/ProductDescription';
 
 interface IProps {
   productDetails: ProductDetailsApiResponse | undefined;
@@ -34,6 +35,8 @@ const ProductInfo = ({productDetails}: IProps) => {
       productInfoWithCurrentLanguage?.price_range?.minimum_price?.regular_price,
     [productInfoWithCurrentLanguage?.price_range?.minimum_price?.regular_price],
   );
+
+  const {bottom} = useSafeAreaInsets();
   return (
     <>
       <Container>
@@ -54,7 +57,7 @@ const ProductInfo = ({productDetails}: IProps) => {
           </BaseText>
           <BaseText type="BodyXxs" color="semanticFgTextWeak">
             {' '}
-            (230 reviews)
+            (230 {t('txt_reviews')})
           </BaseText>
         </ReviewsContainer>
         <BaseText type="BodyMdBold">
@@ -64,24 +67,25 @@ const ProductInfo = ({productDetails}: IProps) => {
           <CrossedText type="BodyXxs" color="semanticFgTextDisabled">
             {regularPrice?.value?.toFixed(2)}{' '}
           </CrossedText>{' '}
-          including VAT
+          {t('txt_including_vat')}
         </BaseText>
         <BaseSpacer height={scale(8)} />
         <DeliveryEstimate />
       </Container>
       <BaseSpacer height={scale(8)} />
       <Container>
-        <BaseText type="BodyXsBold">EMI option available</BaseText>
+        <BaseText type="BodyXsBold">{t('txt_emi_option_available')}</BaseText>
         <RowContainer>
           <Tamara />
           <BaseText type="BodyXxxs">
-            Pay in 4 interest-free payments of AED 374.75.{' '}
-            <UnderlineText type="BodyXxxs">Learn more</UnderlineText>
+            {t('txt_pay_in_4_installments')}{' '}
+            <UnderlineText type="BodyXxxs">{t('txt_learn_more')}</UnderlineText>
           </BaseText>
         </RowContainer>
       </Container>
       <BaseSpacer height={scale(8)} />
-      <ReviewsSection />
+      <ProductDescription productDetails={productInfoWithCurrentLanguage} />
+      <BaseSpacer height={scale(bottom)} />
     </>
   );
 };

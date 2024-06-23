@@ -5,10 +5,10 @@ import {useIsFocused} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@root/src/customTypes/navigation';
 import {FlashList} from '@shopify/flash-list';
+import ScreenLoader from '@ui/components/ScreenLoader';
 import {scale} from '@ui/theme/scaling';
-import LottieView from 'lottie-react-native';
 import React from 'react';
-import {View} from 'react-native';
+import {I18nManager, View} from 'react-native';
 import {styled} from 'styled-components/native';
 import ProductTile from '../ProductTile';
 
@@ -37,19 +37,7 @@ export default function ProductsView({navigation}: ProductsViewProps) {
   };
 
   if (isInitialLoading) {
-    return (
-      <LoaderWrapper>
-        <LottieView
-          autoPlay
-          loop
-          style={{
-            width: scale(200),
-            height: scale(200),
-          }}
-          source={require('@root/assets/mz-smile.json')}
-        />
-      </LoaderWrapper>
-    );
+    return <ScreenLoader />;
   }
 
   return (
@@ -62,6 +50,7 @@ export default function ProductsView({navigation}: ProductsViewProps) {
         estimatedItemSize={scale(250)}
         showsVerticalScrollIndicator={false}
         numColumns={2}
+        disableAutoLayout={I18nManager.isRTL}
       />
     </MainContainer>
   );
@@ -69,10 +58,4 @@ export default function ProductsView({navigation}: ProductsViewProps) {
 const MainContainer = styled(View)(({theme: {colors}}) => ({
   flex: 1,
   backgroundColor: colors.semanticBgWhite,
-}));
-const LoaderWrapper = styled(View)(({theme: {colors}}) => ({
-  flex: 1,
-  backgroundColor: colors.semanticBgWhite,
-  alignItems: 'center',
-  justifyContent: 'center',
 }));

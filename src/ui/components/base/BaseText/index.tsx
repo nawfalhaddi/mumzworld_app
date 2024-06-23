@@ -2,8 +2,7 @@ import {FontNames} from '@ui/fonts/Gotham/fontsNames';
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Text, TextProps} from 'react-native';
-import {DefaultTheme} from 'styled-components/native';
-import styled from 'styled-components/native';
+import styled, {DefaultTheme} from 'styled-components/native';
 
 const getFontFamily = (type: IBaseTextProps['type']) => {
   switch (type) {

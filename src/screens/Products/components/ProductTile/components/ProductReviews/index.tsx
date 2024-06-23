@@ -31,7 +31,7 @@ const ProductReviews = () => {
   return (
     <MainContainer>
       <StarsContainer>
-        {[...new Array(4).keys()].map((_, index) => (
+        {[...new Array(5).keys()].map((_, index) => (
           <StarIcon
             key={index.toString()}
             height={10}
@@ -39,11 +39,6 @@ const ProductReviews = () => {
             fill={Number(index + 1) <= numberOfFilledStars ? '#f9b42c' : 'none'}
           />
         ))}
-        <StarIcon
-          height={10}
-          width={10}
-          fill={numberOfFilledStars <= 1 ? '#f9b42c' : 'none'}
-        />
       </StarsContainer>
       <BaseText type="BodyXxxs">
         {' '}

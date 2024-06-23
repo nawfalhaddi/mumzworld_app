@@ -1,4 +1,21 @@
 {
   "txt_welcome_to_rn_by_nh": "مرحبًا بك في قالبنا",
-  "txt_change_language": "تغيير اللغة"
+  "txt_change_language": "تغيير اللغة",
+  "txt_welcome": "مرحبًا",
+  "txt_products": "المنتجات",
+  "txt_settings": "الإعدادات",
+  "txt_product_details": "تفاصيل المنتج",
+  "txt_features": "الميزات",
+  "txt_description": "الوصف",
+  "txt_switch_language_to": "تبديل اللغة إلى",
+  "txt_pay": "ادفع",
+  "txt_add_to_cart": "أضف إلى السلة",
+  "txt_reviews": "مراجعات",
+  "txt_including_vat": "شامل ضريبة القيمة المضافة",
+  "txt_order_within_8hrs_and_30min": "اطلب خلال 8 ساعات و30 دقيقة",
+  "txt_get_it_by_june_25": "احصل عليه بحلول 25 يونيو:",
+  "txt_dubai": "دبي",
+  "txt_emi_option_available": "يتوفر خيار التقسيط",
+  "txt_pay_in_4_installments": "ادفع على 4 دفعات بدون فوائد بقيمة 374.75 درهم إماراتي لكل دفعة.",
+  "txt_learn_more": "اعرف المزيد"
 }
