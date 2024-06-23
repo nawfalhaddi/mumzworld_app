@@ -2,7 +2,9 @@ import ProductsStack from '@navigation/Stacks/ProductsStack';
 import SettingsStack from '@navigation/Stacks/SettingsStack';
 import WelcomeStack from '@navigation/Stacks/WeclomStack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeIconOutline from '@ui/components/icons/HomeIconOutline';
 import HomeIconSolid from '@ui/components/icons/HomeIconSolid';
+import SettingsIconOutline from '@ui/components/icons/SettingsIconOutline';
 import SettingsIconSolid from '@ui/components/icons/SettingsIconSolid';
 import ShopIconOutline from '@ui/components/icons/ShopIconOutline';
 import ShopIconSolid from '@ui/components/icons/ShopIconSolid';
@@ -12,9 +14,6 @@ import React from 'react';
 import {useTheme} from 'styled-components/native';
 import {RootStackParamList} from '../../customTypes/navigation';
 import {RouteNames} from '../routesNames';
-import HomeIconOutline from '@ui/components/icons/HomeIconOutline';
-import SettingsIconOutline from '@ui/components/icons/SettingsIconOutline';
-
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const getTabIcon = (
@@ -60,6 +59,7 @@ const TabNavigation = () => {
   const theme = useTheme();
   return (
     <Tab.Navigator
+      id="bottomTab"
       initialRouteName={RouteNames.ProductsStack}
       screenOptions={{
         tabBarActiveTintColor: theme?.colors?.semanticBgSecondary,

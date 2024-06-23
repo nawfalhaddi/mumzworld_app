@@ -15,6 +15,8 @@ import AddToWhishListBtn from './components/AddToWhishListBtn';
 import DiscountLabel from './components/DiscountLabel';
 import YallaTag from '@ui/components/YallaTag';
 import BaseSpacer from '@ui/components/base/BaseSpacer';
+import StarIcon from '@ui/components/icons/StarIcon';
+import ProductReviews from './components/ProductReviews';
 
 interface IProductTileProps extends TouchableOpacityProps {
   productInfo: Product;
@@ -64,6 +66,7 @@ const ProductTile = ({productInfo, ...rest}: IProductTileProps) => {
       <BaseText numberOfLines={2} lineBreakMode="tail" type="BodyXxs">
         {productInfo.name}
       </BaseText>
+      <ProductReviews />
       {/* Product pricing  */}
       <BaseText type="BodyXxsBold">
         {currency} {finalPrice?.toFixed(2)}{' '}

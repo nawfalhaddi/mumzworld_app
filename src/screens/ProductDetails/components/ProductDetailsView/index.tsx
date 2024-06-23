@@ -52,12 +52,12 @@ export default function ProductDetailsView({}: ProductDetailsViewProps) {
     </MainContainer>
   );
 }
-const MainContainer = styled(ScrollView)(({theme: {}}) => ({
+const MainContainer = styled(ScrollView)(({theme: {colors}}) => ({
   flex: 1,
-  backgroundColor: 'white',
+  backgroundColor: '#f8f8f9',
 }));
 const CarouselTracker = styled(CarouselIndexTracker)(
   ({theme: {spacingValues}}) => ({
-    marginVertical: spacingValues.hMd,
+    paddingTop: spacingValues.hMd,
   }),
 );
