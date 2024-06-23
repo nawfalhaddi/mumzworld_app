@@ -9,11 +9,11 @@ import SettingsIconSolid from '@ui/components/icons/SettingsIconSolid';
 import ShopIconOutline from '@ui/components/icons/ShopIconOutline';
 import ShopIconSolid from '@ui/components/icons/ShopIconSolid';
 import {FontNames} from '@ui/fonts/Gotham/fontsNames';
-import {t} from 'i18next';
 import React from 'react';
 import {useTheme} from 'styled-components/native';
 import {RootStackParamList} from '../../customTypes/navigation';
 import {RouteNames} from '../routesNames';
+import {useTranslation} from 'react-i18next';
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const getTabIcon = (
@@ -57,6 +57,8 @@ const getTabIcon = (
 
 const TabNavigation = () => {
   const theme = useTheme();
+  const {t} = useTranslation();
+
   return (
     <Tab.Navigator
       id="bottomTab"

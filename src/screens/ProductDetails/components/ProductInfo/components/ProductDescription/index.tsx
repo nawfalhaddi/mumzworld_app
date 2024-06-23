@@ -1,7 +1,7 @@
 import {ProductDetails} from '@customTypes/apis/productDetailsApiResponse';
 import {BaseText} from '@ui/components/base/BaseText';
-import {t} from 'i18next';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -10,6 +10,8 @@ interface IProductDescriptionProps {
 }
 
 const ProductDescription = ({productDetails}: IProductDescriptionProps) => {
+  const {t} = useTranslation();
+
   const featuresBulletPoints = productDetails?.features.trim().split('\n');
   return (
     <MainContainer>

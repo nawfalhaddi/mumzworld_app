@@ -2,8 +2,10 @@ import {RouteNames} from '@navigation/routesNames';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@root/src/customTypes/navigation';
 import {BaseText} from '@ui/components/base/BaseText';
+import {scale} from '@ui/theme/scaling';
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {ScrollView, StyleSheet} from 'react-native';
 import {styled} from 'styled-components/native';
 
 export interface WelcomeViewProps
@@ -13,47 +15,55 @@ export interface WelcomeViewProps
   > {}
 
 export default function WelcomeView({}: WelcomeViewProps) {
+  const {t} = useTranslation();
+
   return (
-    <MainContainer>
+    <MainContainer contentContainerStyle={styles.contentContainer}>
       <BaseText>
-        Hello, my name is <BaseText type="BodySmBold">Nawfal Haddi</BaseText>{' '}
-        and I am a software engineer passionate about developing mobile
-        applications.
+        {t('txt_hello_my_name_is')}
+        <BaseText type="BodySmBold">{t('txt_nawfal_haddi')}</BaseText>{' '}
+        {t('txt_and_i_am_a_software_engineer')}
         {'\n'}
       </BaseText>
       <BaseText>
-        This mobile app is a proof of concept, showcasing potential UX
-        enhancements for the MumzWorld mobile application.{'\n'}
-      </BaseText>
-      <BaseText>
-        In order to change language please Go to Settings {'->'} Press on Change
-        language text
+        {t('txt_this_mobile_app_is_poc')}
         {'\n'}
       </BaseText>
       <BaseText>
-        Feel free to test it. If you have any questions or would like to discuss
-        these suggestions in more detail, I would be delighted to have a call
-        with you. {'\n'}
+        {t('txt_in_order_to_change_language')}
+        {'\n'}
+      </BaseText>
+      <BaseText>
+        {t('txt_feel_free_to_test_it')}
+        {'\n'}
       </BaseText>
 
-      <UnderlineText>Here are my contact details:</UnderlineText>
+      <UnderlineText>{t('txt_here_are_my_contact')}</UnderlineText>
       <BaseText>
-        <BaseText type="BodySmBold">Email</BaseText>: nawfalhaddi@gmail.com
+        <BaseText type="BodySmBold">{t('txt_email')}</BaseText>:
+        nawfalhaddi@gmail.com
       </BaseText>
       <BaseText>
-        <BaseText type="BodySmBold">Linkedin</BaseText>: /in/nawfalhaddi
+        <BaseText type="BodySmBold">{t('txt_linkedin')}</BaseText>:
+        /in/nawfalhaddi
       </BaseText>
       <BaseText>
-        <BaseText type="BodySmBold">Mobile</BaseText>: +971544673454
+        <BaseText type="BodySmBold">{t('txt_mobile')}</BaseText>: +971544673454
       </BaseText>
     </MainContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingHorizontal: scale(16),
+    paddingBottom: scale(100),
+  },
+});
 const MainContainer = styled(ScrollView)(({theme: {spacingValues}}) => ({
   flex: 1,
   backgroundColor: 'white',
-  paddingVertical: spacingValues.vLg,
-  paddingHorizontal: spacingValues.hLg,
+  paddingTop: spacingValues.vLg,
 }));
 const UnderlineText = styled(BaseText)(({theme: {}}) => ({
   textDecoration: 'underline',

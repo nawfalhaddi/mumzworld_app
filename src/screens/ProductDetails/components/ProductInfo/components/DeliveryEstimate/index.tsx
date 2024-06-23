@@ -1,11 +1,13 @@
 import {BaseText} from '@ui/components/base/BaseText';
 import {scale} from '@ui/theme/scaling';
-import {t} from 'i18next';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {View} from 'react-native';
 import styled from 'styled-components/native';
 
 const DeliveryEstimate = () => {
+  const {t} = useTranslation();
+
   return (
     <MainContainer>
       <BaseText type="BodyXs">{t('txt_order_within_8hrs_and_30min')}</BaseText>

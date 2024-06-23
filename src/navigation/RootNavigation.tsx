@@ -1,14 +1,15 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ProductDetails from '@screens/ProductDetails';
 import ProductDetailsHeader from '@screens/ProductDetails/components/ProductDetailsHeader';
-import {t} from 'i18next';
 import React from 'react';
 import {RootStackParamList} from '../customTypes/navigation';
 import BottomTabNavigation from './BottomTabs/BottomTabNavigation';
 import {RouteNames} from './routesNames';
+import {useTranslation} from 'react-i18next';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigation = () => {
+  const {t} = useTranslation();
   return (
     <Stack.Navigator initialRouteName={RouteNames.MainBottomTab}>
       <Stack.Screen

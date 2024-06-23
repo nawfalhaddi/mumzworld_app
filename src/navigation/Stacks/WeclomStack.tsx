@@ -2,21 +2,20 @@ import {RouteNames} from '@navigation/routesNames';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@root/src/customTypes/navigation';
 import Welcome from '@screens/Welcome';
-import {FontNames} from '@ui/fonts/Gotham/fontsNames';
-import {t} from 'i18next';
+import BaseAppHeader from '@ui/components/base/BaseAppHeader';
 import React from 'react';
-import {useTheme} from 'styled-components/native';
+import {useTranslation} from 'react-i18next';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const WelcomeStack = () => {
-  const theme = useTheme();
+  const {t} = useTranslation();
+
   return (
     <Stack.Navigator
       initialRouteName={RouteNames.WelcomeScreen}
       screenOptions={{
-        headerTintColor: theme.colors.semanticFgText,
-        headerTitleStyle: {fontFamily: FontNames.GothamBold},
+        header: BaseAppHeader,
       }}>
       <Stack.Screen
         name={RouteNames.WelcomeScreen}

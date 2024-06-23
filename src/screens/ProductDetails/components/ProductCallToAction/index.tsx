@@ -2,14 +2,16 @@ import {BaseText} from '@ui/components/base/BaseText';
 import BaseTouchableOpacity from '@ui/components/base/BaseTouchableOpacity';
 import {scale} from '@ui/theme/scaling';
 import {LinearGradient} from 'expo-linear-gradient';
-import {t} from 'i18next';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {View, ViewProps} from 'react-native';
 import styled from 'styled-components/native';
 
 interface IProductCallToActionProps extends ViewProps {}
 
 const ProductCallToAction = ({...rest}: IProductCallToActionProps) => {
+  const {t} = useTranslation();
+
   return (
     <MainContainer colors={['rgba(255,255,255,0.1)', '#fff']} {...rest}>
       <Container>

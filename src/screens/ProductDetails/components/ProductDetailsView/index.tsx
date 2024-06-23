@@ -3,15 +3,16 @@ import {RouteNames} from '@navigation/routesNames';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@root/src/customTypes/navigation';
 import ScreenLoader from '@ui/components/ScreenLoader';
+import BaseSpacer from '@ui/components/base/BaseSpacer';
 import {scale} from '@ui/theme/scaling';
 import React, {useState} from 'react';
-import {Dimensions, I18nManager, Image, ScrollView, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
+import {Dimensions, Image, ScrollView, View} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import {styled} from 'styled-components/native';
 import CarouselIndexTracker from '../CarouselIndexTracker';
 import ProductCallToAction from '../ProductCallToAction';
 import ProductInfo from '../ProductInfo';
-import BaseSpacer from '@ui/components/base/BaseSpacer';
 
 export interface ProductDetailsViewProps
   extends NativeStackScreenProps<
@@ -24,18 +25,18 @@ const windowWidth = Dimensions.get('window').width;
 export default function ProductDetailsView({}: ProductDetailsViewProps) {
   const {data, isInitialLoading} = useGetProductDetails();
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const {i18n} = useTranslation();
   if (isInitialLoading) {
     return <ScreenLoader />;
   }
   return (
     <>
       <MainContainer>
-        <ScrollView style={{}}>
+        <ScrollView bounces={false}>
           <Carousel
             loop
             width={windowWidth}
-            autoPlayReverse={I18nManager.isRTL}
+            autoPlayReverse={i18n.dir() === 'rtl'}
             height={scale(300)}
             data={data?.data?.product?.[1]?.media_gallery_entries ?? []}
             scrollAnimationDuration={1000}

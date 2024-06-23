@@ -1,67 +1,36 @@
-import {useGetProductsList} from '@hooks/apis/useGetProductsList';
-import {useIsFocused} from '@react-navigation/native';
 import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import BaseSpacer from '@ui/components/base/BaseSpacer';
 import {BaseText} from '@ui/components/base/BaseText';
 import BaseTouchableOpacity from '@ui/components/base/BaseTouchableOpacity';
-import CartIcon from '@ui/components/icons/CartIcon';
-import FilterIcon from '@ui/components/icons/FilterIcon';
 import mumzWorldTheme from '@ui/theme';
 import {scale} from '@ui/theme/scaling';
 import React from 'react';
-import {useTranslation} from 'react-i18next';
 import {StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import styled, {useTheme} from 'styled-components/native';
+import styled from 'styled-components/native';
 
-interface ProductListHeader extends NativeStackHeaderProps {}
+interface BaseAppHeader extends NativeStackHeaderProps {}
 
-const ProductListHeader = ({}: ProductListHeader) => {
-  const {t} = useTranslation();
-
+const BaseAppHeader = (props: BaseAppHeader) => {
   const {top} = useSafeAreaInsets();
-  const theme = useTheme();
-  const isFocused = useIsFocused();
-  const {data} = useGetProductsList({
-    enabled: isFocused,
-  });
 
   return (
     <MainContainer>
       <BaseSpacer height={top} />
       <RowContainer style={styles.shadowStyling}>
-        <LeftContainer>
-          <FilterIcon
-            stroke={theme.colors.semanticFgText}
-            height={scale(20)}
-            width={scale(20)}
-          />
-          <BaseText type="BodyXxs" color="semanticFgText">
-            {' '}
-            (2)
-          </BaseText>
-        </LeftContainer>
+        <LeftContainer />
         <MiddleContainer>
-          <BaseText type="BodyXsBold" color="semanticFgText">
-            {t('txt_category_name_search')}
-          </BaseText>
-          <BaseText type="BodyXxs" color="semanticFgText">
-            ({data?.data?.products?.total_count})
+          <BaseText type="BodySmBold" color="semanticFgText">
+            {props?.options?.title}
           </BaseText>
         </MiddleContainer>
-        <RightContainer>
-          <CartIcon
-            stroke={theme.colors.semanticFgText}
-            height={scale(20)}
-            width={scale(20)}
-          />
-        </RightContainer>
+        <RightContainer />
       </RowContainer>
     </MainContainer>
   );
 };
 
-export default ProductListHeader;
+export default BaseAppHeader;
 
 const styles = StyleSheet.create({
   shadowStyling: {
@@ -98,12 +67,12 @@ const LeftContainer = styled(BaseTouchableOpacity)(
     height: scale(50),
     paddingLeft: spacingValues.hSm,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     flexDirection: 'row',
   }),
 );
 
-const MiddleContainer = styled(View)(({theme: {}}) => ({
+const MiddleContainer = styled(View)(({}) => ({
   flex: 5,
   height: scale(50),
   alignItems: 'center',
@@ -114,6 +83,7 @@ const RightContainer = styled(View)(({theme: {spacingValues}}) => ({
   flex: 1,
   height: scale(50),
   paddingRight: spacingValues.hSm,
-  justifyContent: 'center',
-  alignItems: 'flex-end',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  flexDirection: 'row',
 }));

@@ -17,5 +17,16 @@
   "txt_pay_in_4_installments": "Pay in 4 interest-free payments of AED 374.75.",
   "txt_learn_more": "Learn more",
   "txt_english": "English",
-  "txt_arabic": "Arabic"
+  "txt_arabic": "Arabic",
+  "txt_hello_my_name_is": "Hello, my name is ",
+  "txt_nawfal_haddi": "Nawfal Haddi",
+  "txt_and_i_am_a_software_engineer": "and I am a software engineer passionate about developing mobile applications.",
+  "txt_this_mobile_app_is_poc": "This mobile app is a proof of concept, showcasing potential UX enhancements for the MumzWorld mobile application.",
+  "txt_in_order_to_change_language": "In order to change language please Go to Settings -> Press on Change language text",
+  "txt_feel_free_to_test_it": "Feel free to test it. If you have any questions or would like to discuss these suggestions in more detail, I would be delighted to have a call with you.",
+  "txt_here_are_my_contact": "Here are my contact details:",
+  "txt_email": "Email",
+  "txt_linkedin": "Linkedin",
+  "txt_mobile": "Mobile",
+  "txt_category_name_search": "Category name / Search"
 }
