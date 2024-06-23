@@ -15,7 +15,7 @@ export interface SettingsViewProps
     RouteNames.SettingsScreen
   > {}
 
-export default function SettingsView() {
+export default function SettingsView({}: SettingsViewProps) {
   const {t, i18n} = useTranslation();
   const {languageCode} = getLocales()[0];
   return (

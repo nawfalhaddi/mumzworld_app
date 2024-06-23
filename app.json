@@ -2,7 +2,6 @@
   "expo": {
     "name": "mumzworld_app",
     "slug": "mumzworld-app",
-    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,14 +10,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "version": "1.0.0",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nawfalhaddi.mumzworldapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nawfalhaddi.mumzworldapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
