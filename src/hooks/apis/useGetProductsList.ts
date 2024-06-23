@@ -22,7 +22,7 @@ export const useGetProductsList = (
     [ReactQueryKeys.ProductDetails],
     () =>
       axiosInstance
-        .get<ProductsApiResponse>('product-list-lite')
+        .get<ProductsApiResponse>('product-list-large')
         .then(response => {
           return response?.data;
         })
