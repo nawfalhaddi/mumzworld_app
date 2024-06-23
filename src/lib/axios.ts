@@ -1,9 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/',
+  baseURL: 'https://storage.googleapis.com/mumzrn/',
   timeout: 10000,
-  headers: {'X-Custom-Header': 'foobar'},
 });
 
 export default axiosInstance;

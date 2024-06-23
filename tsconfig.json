@@ -14,7 +14,8 @@
       "@ui/*": ["./src/ui/*"],
       "@translation/*": ["./src/translation/*"],
       "@utils/*": ["./src/utils/*"],
-      "@root/*": ["./*"]
+      "@root/*": ["./*"],
+      "@customTypes/*": ["./src/customTypes/*"]
     }
   },
   "ts-node": {

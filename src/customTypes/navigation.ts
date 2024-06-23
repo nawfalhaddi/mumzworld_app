@@ -9,8 +9,11 @@ declare global {
 export type RootStackParamList = {
   [RouteNames.ProductDetailsScreen]: undefined;
   [RouteNames.SettingsScreen]: undefined;
-  [RouteNames.ProductsScreen]: undefined;
+  [RouteNames.ProductsScreen]: {itemsCount?: number} | undefined;
   [RouteNames.WelcomeScreen]: undefined;
   [RouteNames.HomeScreen]: undefined;
   [RouteNames.MainBottomTab]: undefined;
+  [RouteNames.WelcomeStack]: undefined;
+  [RouteNames.ProductsStack]: undefined;
+  [RouteNames.SettingsStack]: undefined;
 };

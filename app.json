@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mumzworld_app",
-    "slug": "mumzworld_app",
+    "slug": "mumzworld-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,7 +23,45 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {},
-    "plugins": ["expo-localization"]
+    "extra": {
+      "eas": {
+        "projectId": "c59a7418-4566-409c-a9d9-2236412740c1"
+      }
+    },
+    "plugins": [
+      "expo-localization",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./src/ui/fonts/Gotham/Gotham-Black.otf",
+            "./src/ui/fonts/Gotham/Gotham-BlackItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Bold.otf",
+            "./src/ui/fonts/Gotham/Gotham-BoldItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Book.otf",
+            "./src/ui/fonts/Gotham/Gotham-BookItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Light.otf",
+            "./src/ui/fonts/Gotham/Gotham-LightItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Medium.otf",
+            "./src/ui/fonts/Gotham/Gotham-LightItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Medium.otf",
+            "./src/ui/fonts/Gotham/Gotham-MediumItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Thin.otf",
+            "./src/ui/fonts/Gotham/Gotham-ThinItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-Ultra.otf",
+            "./src/ui/fonts/Gotham/Gotham-UltraItalic.otf",
+            "./src/ui/fonts/Gotham/Gotham-XLight.otf",
+            "./src/ui/fonts/Gotham/Gotham-XLightItalic.otf"
+          ]
+        }
+      ]
+    ],
+    "owner": "nawfalhaddi",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c59a7418-4566-409c-a9d9-2236412740c1"
+    }
   }
 }

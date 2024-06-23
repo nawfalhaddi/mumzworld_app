@@ -12,7 +12,7 @@ const replace = require('replace-in-file');
  */
 const screenWrapperTemplate = `import {RouteNames} from '@navigation/routesNames';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '@root/src/types/navigation';
+import {RootStackParamList} from '@root/src/customTypes/navigation';
 import React from 'react';
 import {{screenName}}View from './components/{{screenName}}View';
 
@@ -26,7 +26,7 @@ export default function {{screenName}}(props: {{screenName}}Props) {
 
 const mainViewTemplate = `import {RouteNames} from '@navigation/routesNames';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '@root/src/types/navigation';
+import {RootStackParamList} from '@root/src/customTypes/navigation';
 import {styled} from 'styled-components/native';
 import React from 'react';
 import {Text, View} from 'react-native';

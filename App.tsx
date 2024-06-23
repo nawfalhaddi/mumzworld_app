@@ -6,16 +6,25 @@ import {persistor, store} from '@store';
 import React from 'react';
 import {Provider} from 'react-redux';
 import RootNavigation from '@navigation/RootNavigation';
-import {RootStackParamList} from './src/types/navigation';
+import {RootStackParamList} from './src/customTypes/navigation';
 import {PersistGate} from 'redux-persist/integration/react';
 import {ThemeProvider} from 'styled-components/native';
 import projectNameTheme from '@ui/theme';
 import {QueryClientProvider} from '@tanstack/react-query';
 import {queryClient} from '@lib/react-query';
+import * as SplashScreen from 'expo-splash-screen';
 import '@translation/language-detector';
+import useServicesInitializer from '@hooks/useServicesInitializer';
+
+SplashScreen.preventAutoHideAsync();
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 const App = () => {
+  const {isAppReadyToStart} = useServicesInitializer();
+
+  if (!isAppReadyToStart) {
+    return null;
+  }
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>

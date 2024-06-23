@@ -13,3 +13,6 @@ export const horizontalScale = (size: number): number =>
 // Will return a linear scaled result of the provided size, based on your device's screen height.
 export const verticalScale = (size: number): number =>
   parseFloat(((height / guidelineBaseHeight) * size).toFixed(2));
+
+export const scale = (size: number): number =>
+  parseFloat(((width / guidelineBaseWidth) * size).toFixed(2));

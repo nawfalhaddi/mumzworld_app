@@ -1,7 +1,7 @@
 import {RouteNames} from '@navigation/routesNames';
 import {useIsFocused} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '@root/src/types/navigation';
+import {RootStackParamList} from '@root/src/customTypes/navigation';
 import {useCreatePost} from '@screens/Home/hooks/useCreatePost';
 import {useGetPosts} from '@screens/Home/hooks/useGetPosts';
 import {useDispatch, useSelector} from '@store';

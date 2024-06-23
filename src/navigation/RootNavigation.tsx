@@ -1,9 +1,9 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '@screens/Home';
 import React from 'react';
-import {RootStackParamList} from '../types/navigation';
+import {RootStackParamList} from '../customTypes/navigation';
 import {RouteNames} from './routesNames';
-import TabNavigation from './TabNavigation';
+import BottomTabNavigation from './BottomTabs/BottomTabNavigation';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigation = () => {
@@ -12,7 +12,7 @@ const RootNavigation = () => {
       <Stack.Screen
         name={RouteNames.MainBottomTab}
         options={{headerShown: false}}
-        component={TabNavigation}
+        component={BottomTabNavigation}
       />
     </Stack.Navigator>
   );
