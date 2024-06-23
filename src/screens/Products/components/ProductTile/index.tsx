@@ -1,4 +1,6 @@
 import {Product} from '@customTypes/apis/productsApiResponse';
+import YallaTag from '@ui/components/YallaTag';
+import BaseSpacer from '@ui/components/base/BaseSpacer';
 import {BaseText} from '@ui/components/base/BaseText';
 import BaseTouchableOpacity from '@ui/components/base/BaseTouchableOpacity';
 import {scale} from '@ui/theme/scaling';
@@ -13,9 +15,6 @@ import styled, {useTheme} from 'styled-components/native';
 import AddToCartBtn from './components/AddToCartBtn';
 import AddToWhishListBtn from './components/AddToWhishListBtn';
 import DiscountLabel from './components/DiscountLabel';
-import YallaTag from '@ui/components/YallaTag';
-import BaseSpacer from '@ui/components/base/BaseSpacer';
-import StarIcon from '@ui/components/icons/StarIcon';
 import ProductReviews from './components/ProductReviews';
 
 interface IProductTileProps extends TouchableOpacityProps {

@@ -3,7 +3,6 @@ export enum RouteNames {
   SettingsScreen = 'SettingsScreen',
   ProductsScreen = 'ProductsScreen',
   WelcomeScreen = 'WelcomeScreen',
-  HomeScreen = 'HomeScreen',
   MainBottomTab = 'MainBottomTab',
   WelcomeStack = 'WelcomeStack',
   ProductsStack = 'ProductsStack',

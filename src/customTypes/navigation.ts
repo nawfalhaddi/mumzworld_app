@@ -11,7 +11,6 @@ export type RootStackParamList = {
   [RouteNames.SettingsScreen]: undefined;
   [RouteNames.ProductsScreen]: {itemsCount?: number} | undefined;
   [RouteNames.WelcomeScreen]: undefined;
-  [RouteNames.HomeScreen]: undefined;
   [RouteNames.MainBottomTab]: undefined;
   [RouteNames.WelcomeStack]: undefined;
   [RouteNames.ProductsStack]: undefined;

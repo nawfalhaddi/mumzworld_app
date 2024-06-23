@@ -15,7 +15,7 @@ import styled, {useTheme} from 'styled-components/native';
 
 interface ProductListHeader extends NativeStackHeaderProps {}
 
-const ProductListHeader = (props: ProductListHeader) => {
+const ProductListHeader = ({}: ProductListHeader) => {
   const {top} = useSafeAreaInsets();
   const theme = useTheme();
   const isFocused = useIsFocused();
@@ -90,7 +90,7 @@ const RowContainer = styled(View)(({theme: {colors}}) => ({
 }));
 
 const LeftContainer = styled(BaseTouchableOpacity)(
-  ({theme: {colors, spacingValues}}) => ({
+  ({theme: {spacingValues}}) => ({
     flex: 1,
     height: scale(50),
     paddingLeft: spacingValues.hSm,
@@ -100,14 +100,14 @@ const LeftContainer = styled(BaseTouchableOpacity)(
   }),
 );
 
-const MiddleContainer = styled(View)(({theme: {colors, spacingValues}}) => ({
+const MiddleContainer = styled(View)(({theme: {}}) => ({
   flex: 5,
   height: scale(50),
   alignItems: 'center',
   justifyContent: 'center',
 }));
 
-const RightContainer = styled(View)(({theme: {colors, spacingValues}}) => ({
+const RightContainer = styled(View)(({theme: {spacingValues}}) => ({
   //   borderWidth: 1,
   flex: 1,
   height: scale(50),
